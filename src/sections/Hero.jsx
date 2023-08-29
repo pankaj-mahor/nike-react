@@ -1,4 +1,7 @@
 import React from "react";
+import { arrowRight } from "../assets/icons";
+import Button from "../components/Button";
+import { statistics } from "../constants";
 
 const Hero = () => {
 	return (
@@ -22,6 +25,19 @@ const Hero = () => {
 					Discover styles nike arrivals, quality comfort, and innovation for
 					your active life.
 				</p>
+				<Button label="Shop Now" iconURL={arrowRight} />
+
+				<div className="flex justify-starts item-center gap-16 flex-wrap w-full mt-20">
+					{statistics.map((stat, index) => {
+						return (
+							<div key={index}>
+								<p>{stat.value}</p>
+
+								<p>{stat.label}</p>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</section>
 	);
